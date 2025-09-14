@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Weather App</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+  <main class="container">
+    <h1>Weather App</h1>
+
+    <div class="controls">
+      <input id="cityInput" type="text" placeholder="Enter city (e.g. London)" />
+      <button id="searchBtn">Search</button>
+      <button id="geoBtn" title="Use your location">Use My Location</button>
+    </div>
+
+    <div id="message" class="message"></div>
+
+    <section id="weatherCard" class="card hidden">
+      <div class="card-left">
+        <h2 id="location"></h2>
+        <p id="description" class="muted"></p>
+        <div class="temp-row">
+          <img id="icon" alt="weather icon" />
+          <div>
+            <div id="temp" class="big"></div>
+            <div id="feels" class="muted small"></div>
+          </div>
+        </div>
+      </div>
+      <div class="card-right">
+        <div>Humidity: <span id="humidity"></span>%</div>
+        <div>Wind: <span id="wind"></span> m/s</div>
+      </div>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</body>
+</html>
